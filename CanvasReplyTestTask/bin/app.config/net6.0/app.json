@@ -1,0 +1,11 @@
+{
+  "ApplicationUrl": "https://demo.1crmcloud.com",
+  "Login": "admin",
+  "Password": "admin",
+  "TestFirstName": "TestName",
+  "TestLastName": "TestLastName",
+  "FirstCategory": "Customers",
+  "SecondCategory": "Suppliers",
+  "Role": "CEO",
+  "Project": "Project Profitability"
+}

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CanvasReplyTestTask")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4addfe233b77c2832b73b73932428e7155850a2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aae1f17e7b87178f2f4bcb0cc22becf879821d9f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CanvasReplyTestTask")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CanvasReplyTestTask")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -152,7 +152,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Login into application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 15
- testRunner.When("Click on \"Report & Settings\" tab and choose \"Activity Log\" subtab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Click on \"Reports & Settings\" tab and choose \"Activity Log\" subtab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
  testRunner.And("Check 3 elements", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

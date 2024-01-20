@@ -8,6 +8,9 @@ namespace CanvasReplyTestTask.StepDefinitions
     {
         private readonly ReportAndSettingsPage _reportAndSettingsPage;
         private readonly ActivityLogPage _activityLogPage;
+
+        private List<string> NamesList = new List<string>();
+
         public ReportAndSettingsStepDefinitions(Driver driver)
         {
             _reportAndSettingsPage = new ReportAndSettingsPage(driver.Current);
@@ -37,19 +40,21 @@ namespace CanvasReplyTestTask.StepDefinitions
         [When(@"Check (.*) elements")]
         public void WhenCheckElements(int count)
         {
-            throw new PendingStepException();
+            _activityLogPage.SelectCheckBox(count);
+            NamesList = _activityLogPage.GetNames(3);
         }
 
         [When(@"Delete elements")]
         public void WhenDeleteElements()
         {
-            throw new PendingStepException();
+            _activityLogPage.DeleteContact();
         }
 
         [Then(@"Check if those elements were removed")]
         public void ThenCheckIfThoseElementsWereRemoved()
         {
-            throw new PendingStepException();
+            var NamesAfetDeleted = _activityLogPage.GetNames(3);
+            NamesAfetDeleted.Should().NotBeEquivalentTo(NamesList);
         }
     }
 }

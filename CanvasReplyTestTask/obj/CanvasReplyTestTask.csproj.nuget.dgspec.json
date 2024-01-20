@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Test\\CanvasTestTask\\CanvasReplyTestTask\\CanvasReplyTestTask.csproj": {}
+    "C:\\Users\\User\\source\\repos\\CurrentTestProject\\CanvasTestTask\\CanvasReplyTestTask\\CanvasReplyTestTask.csproj": {}
   },
   "projects": {
-    "C:\\Test\\CanvasTestTask\\CanvasReplyTestTask\\CanvasReplyTestTask.csproj": {
+    "C:\\Users\\User\\source\\repos\\CurrentTestProject\\CanvasTestTask\\CanvasReplyTestTask\\CanvasReplyTestTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Test\\CanvasTestTask\\CanvasReplyTestTask\\CanvasReplyTestTask.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\CurrentTestProject\\CanvasTestTask\\CanvasReplyTestTask\\CanvasReplyTestTask.csproj",
         "projectName": "CanvasReplyTestTask",
-        "projectPath": "C:\\Test\\CanvasTestTask\\CanvasReplyTestTask\\CanvasReplyTestTask.csproj",
-        "packagesPath": "C:\\Users\\lbarczykowski\\.nuget\\packages\\",
-        "outputPath": "C:\\Test\\CanvasTestTask\\CanvasReplyTestTask\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\CurrentTestProject\\CanvasTestTask\\CanvasReplyTestTask\\CanvasReplyTestTask.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\CurrentTestProject\\CanvasTestTask\\CanvasReplyTestTask\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lbarczykowski\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,6 +88,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

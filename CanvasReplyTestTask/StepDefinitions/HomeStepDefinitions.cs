@@ -28,7 +28,7 @@ namespace CanvasReplyTestTask.StepDefinitions
         [When(@"Click on ""([^""]*)"" tab and choose ""([^""]*)"" subtab")]
         public void WhenClickOnTabAndChooseSubtab(string tabName, string subTabName)
         {
-            throw new PendingStepException();
+            _homePage.ClickOnSubTab(tabName, subTabName);
         }
     }
 }

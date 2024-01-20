@@ -12,7 +12,7 @@ Scenario: Run Report
 
 Scenario: Remove events from activity log
 	Given Login into application
-	When Click on "Report & Settings" tab and choose "Activity Log" subtab
+	When Click on "Reports & Settings" tab and choose "Activity Log" subtab
 	And Check 3 elements
 	And Delete elements
 	Then Check if those elements were removed
