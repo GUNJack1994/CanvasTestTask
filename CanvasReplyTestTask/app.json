@@ -10,12 +10,12 @@
   "Project": "Project Profitability",
   "version": 1,
   "dependencies": {
-    "SpecFlow.Plus.LivingDocPlugin": "3.9.57" // Ustaw odpowiednią wersję pluginu
+    "SpecFlow.Plus.LivingDocPlugin": "3.9.57"
   },
   "plugins": {
     "SpecFlow.Plus.LivingDocPlugin": {
-      "Target": "Reports/LivingDocReport.html", // Ścieżka do generowanego raportu HTML
-      "Language": "en" // Język raportu (może być "en", "de", "fr", itp.)
+      "Target": "LivingDocReport.html", 
+      "Language": "en"
     }
   }
 }

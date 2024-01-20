@@ -1,15 +1,25 @@
 ﻿using BoDi;
 using CanvasReplyTestTask.Drivers;
+using CanvasReplyTestTask.PageObjects;
 using CanvasReplyTestTask.Support;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System.ComponentModel;
 
 namespace CanvasReplyTestTask.Hooks
 {
     [Binding]
     public class SharedBrowserHooks
     {
-
         public static AppConfig AppConfig;
+        public LoginPage _loginPage;
+        public HomePage _homePage;
+
+        public SharedBrowserHooks(Driver driver) 
+        {
+            _loginPage = new LoginPage(driver.Current);
+            _homePage = new HomePage(driver.Current);
+        }
 
         [BeforeTestRun]
         public static void BeforeTestRun(ObjectContainer testThreadContainer)
@@ -17,8 +27,15 @@ namespace CanvasReplyTestTask.Hooks
             var configReader = new AppConfigReader();
             AppConfig = configReader.ReadConfig();
 
-            //Initialize a shared BrowserDriver in the global container
             testThreadContainer.BaseContainer.Resolve<Driver>();
+        }
+
+        [AfterScenario]
+        public void AfterScenario()
+        {
+            _homePage.DropDownMenu.Click();
+            _homePage.LogOutButton.Click();
+            Thread.Sleep(2000);
         }
     }
 }

@@ -46,6 +46,10 @@ namespace CanvasReplyTestTask.PageObjects
         public IWebElement SubTabName(string subTabName) => _webDriver.FindElement(
             By.XPath($"//a[@class='menu-tab-sub-list' and normalize-space()='{subTabName}']"));
 
+        public IWebElement DropDownMenu => _webDriver.FindElement(By.XPath("//label[@for='meta-options-dropdown-state-storage']"));
+
+        public IWebElement LogOutButton => _webDriver.FindElement(By.XPath("//a[normalize-space()='Logout']"));
+
         public void ClickOnSubTab(string tabName, string subTabName) 
         {
             _action.MoveToElement(TabName(tabName)).Perform();

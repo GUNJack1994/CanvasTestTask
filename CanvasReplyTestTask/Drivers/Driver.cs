@@ -9,26 +9,26 @@ namespace CanvasReplyTestTask.Drivers
     /// <summary>
     public class Driver : IDisposable
     {
-            private readonly Lazy<IWebDriver> _currentWebDriverLazy;
-            private bool _isDisposed;
+        private readonly Lazy<IWebDriver> _currentWebDriverLazy;
+        private bool _isDisposed;
 
-            public Driver()
-            {
-                _currentWebDriverLazy = new Lazy<IWebDriver>(CreateWebDriver);
-            }
+        public Driver()
+        {
+            _currentWebDriverLazy = new Lazy<IWebDriver>(CreateWebDriver);
+        }
 
-            /// <summary>
-            /// The Selenium IWebDriver instance
-            /// </summary>
-            public IWebDriver Current => _currentWebDriverLazy.Value;
+        /// <summary>
+        /// The Selenium IWebDriver instance
+        /// </summary>
+        public IWebDriver Current => _currentWebDriverLazy.Value;
 
-            /// <summary>
-            /// Creates the Selenium web driver (opens a browser)
-            /// </summary>
-            /// <returns></returns>
-            private IWebDriver CreateWebDriver()
-            {
-                //We use the Chrome browser
+        /// <summary>
+        /// Creates the Selenium web driver (opens a browser)
+        /// </summary>
+        /// <returns></returns>
+        private IWebDriver CreateWebDriver()
+        {
+            //We use the Chrome browser
             var chromeDriverService = ChromeDriverService.CreateDefaultService();
 
             var chromeOptions = new ChromeOptions();
@@ -38,21 +38,21 @@ namespace CanvasReplyTestTask.Drivers
             chromeDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
 
             return chromeDriver;
-            }
+        }
 
-            public void Dispose()
+        public void Dispose()
+        {
+            if (_isDisposed)
             {
-                if (_isDisposed)
-                {
-                    return;
-                }
-
-                if (_currentWebDriverLazy.IsValueCreated)
-                {
-                    Current.Quit();
-                }
-
-                _isDisposed = true;
+                return;
             }
+
+            if (_currentWebDriverLazy.IsValueCreated)
+            {
+                Current.Quit();
+            }
+
+            _isDisposed = true;
+        }
     }
 }
