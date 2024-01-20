@@ -29,14 +29,15 @@ namespace CanvasReplyTestTask.Drivers
             private IWebDriver CreateWebDriver()
             {
                 //We use the Chrome browser
-                var chromeDriverService = ChromeDriverService.CreateDefaultService();
+            var chromeDriverService = ChromeDriverService.CreateDefaultService();
 
-                var chromeOptions = new ChromeOptions();
-                chromeOptions.AddArgument("start-maximized");
+            var chromeOptions = new ChromeOptions();
 
-                var chromeDriver = new ChromeDriver(chromeDriverService, chromeOptions);
+            var chromeDriver = new ChromeDriver(chromeDriverService, chromeOptions);
+            chromeDriver.Manage().Window.Maximize();
+            chromeDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
 
-                return chromeDriver;
+            return chromeDriver;
             }
 
             public void Dispose()

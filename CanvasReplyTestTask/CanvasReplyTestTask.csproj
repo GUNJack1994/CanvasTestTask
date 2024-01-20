@@ -7,10 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Calculator.feature.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
     <PackageReference Include="Selenium.Support" Version="4.16.2" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="120.0.6099.10900" />
@@ -22,7 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Support\" />
+    <None Update="app.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
