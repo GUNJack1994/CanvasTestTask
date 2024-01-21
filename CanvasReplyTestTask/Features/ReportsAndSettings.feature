@@ -1,8 +1,5 @@
 ﻿Feature: ReportsAndSettings
 
-A short summary of the feature
-
-@tag1
 Scenario: Run Report
 	Given Login into application
 	When Click on "Reports & Settings" tab

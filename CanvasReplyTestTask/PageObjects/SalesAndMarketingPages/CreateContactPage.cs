@@ -1,10 +1,6 @@
-﻿using CanvasReplyTestTask.Drivers;
-using CanvasReplyTestTask.Hooks;
+﻿using CanvasReplyTestTask.Hooks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 
 namespace CanvasReplyTestTask.PageObjects.SalesAndMarketingPages
@@ -39,38 +35,30 @@ namespace CanvasReplyTestTask.PageObjects.SalesAndMarketingPages
 
         public void CreateContact()
         {
-            // Wprowadź dane testowe
             FirstName.SendKeys(SharedBrowserHooks.AppConfig.TestFirstName);
             LastName.SendKeys(SharedBrowserHooks.AppConfig.TestLastName);
 
             Thread.Sleep(2000);
-            // Wybierz pierwszą kategorię
             SelectCategoryOption(SharedBrowserHooks.AppConfig.FirstCategory);
 
             Thread.Sleep(2000);
-            // Wybierz drugą kategorię
             SelectCategoryOption(SharedBrowserHooks.AppConfig.SecondCategory);
 
-            // Wybierz rolę
             Thread.Sleep(2000);
             SelectRoleOption(SharedBrowserHooks.AppConfig.Role);
 
-            // Kliknij przycisk Zapisz
             SaveButton.Click();
         }
 
         private void SelectCategoryOption(string optionText)
         {
-            // Oczekaj na widoczność kategorii
             _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(Category)).Click();
 
-            // Wyszukaj i wybierz kategorię
             SearchAndSelectOption(ElementIntoCategorySelector, optionText, SearchToolBar);
         }
 
         private void SelectRoleOption(string optionText)
         {
-            // Oczekaj na widoczność roli
             _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(Role)).Click();
 
             SearchAndSelectOption(ElementIntoCategorySelector, optionText);    
@@ -78,16 +66,14 @@ namespace CanvasReplyTestTask.PageObjects.SalesAndMarketingPages
 
         private void SearchAndSelectOption(string optionSelector, string optionText, [Optional]IWebElement searchInput)
         {
-            // Wprowadź tekst do wyszukiwania
             if (optionText != SharedBrowserHooks.AppConfig.Role)
             {
                 searchInput.SendKeys(optionText);
             }
-            // Oczekaj na widoczność opcji
+
             IList<IWebElement> menuOptions = _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(
                 By.CssSelector(optionSelector)));
 
-            // Wybierz opcję na podstawie tekstu
             SelectMenuOption(menuOptions, optionText);
         }
 
@@ -119,7 +105,6 @@ namespace CanvasReplyTestTask.PageObjects.SalesAndMarketingPages
             FirstCategoryAfterCreate = splitCategories[0];
             SecondCategoryAfterCreate = splitCategories[1];
         }
-
         public void DeleteContact() 
         {
             DeleteButton.Click();

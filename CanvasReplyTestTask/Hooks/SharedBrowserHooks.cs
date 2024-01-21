@@ -2,9 +2,6 @@
 using CanvasReplyTestTask.Drivers;
 using CanvasReplyTestTask.PageObjects;
 using CanvasReplyTestTask.Support;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System.ComponentModel;
 
 namespace CanvasReplyTestTask.Hooks
 {
@@ -35,7 +32,6 @@ namespace CanvasReplyTestTask.Hooks
         {
             _homePage.DropDownMenu.Click();
             _homePage.LogOutButton.Click();
-            Thread.Sleep(2000);
         }
     }
 }

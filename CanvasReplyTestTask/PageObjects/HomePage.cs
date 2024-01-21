@@ -1,11 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CanvasReplyTestTask.PageObjects
 {
@@ -14,7 +9,6 @@ namespace CanvasReplyTestTask.PageObjects
         private readonly IWebDriver _webDriver;
         private readonly Actions _action;
         private readonly WebDriverWait _wait;
-
         public HomePage(IWebDriver webDriver)
         {
             _webDriver = webDriver;
